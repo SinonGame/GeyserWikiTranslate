@@ -1,26 +1,27 @@
-Commonly, people may have issues with Geyser not showing up in their server list or run into similar issues. This page contains a few common issues people may encounter that you might have as well as potential fixes for them. If you still can't make it work, join [our Discord](https://discord.geysermc.org) for support.
+通常情况下，人门经常会有Geyser服务器不显示或者类似的问题。此页面包含了一些常见的问题和可能的修复办法，如果你还是无法修复问题，请加入[官方Discord](https://discord.geysermc.org)寻求帮助。
 
-# "Unable to connect to world"
-This error means that the Bedrock client cannot find the server. If this occurred after updating a plugin version of Geyser, ensure that you shut off your server, swapped the Geyser jar, and then started up your server.
+# "无法连接至世界"
+此错误表示Bedrock客户端无法连接到服务器。如果这个问题在升级了插件版Geyser后出现，确保你先关闭服务器，更换jar文件，然后启动服务器。
 
-Otherwise, check the solutions below for potential solutions, make sure you're port forwarded or make sure your hosting provider can support Geyser.
+如果问题依然存在，请检查下面的内容以寻找解决方案，确保您已进行端口转发，并确保您的托管服务提供商可以支持Geyser。
 
-## Pterodactyl
+## 翼龙面板
 If you get this error while using the Pterodactyl Panel, try editing the Geyser config and changing the port to something besides `19132` (e.g. `25566`).
+如果你在使用翼龙面板的时候出现了该错误，尝试修改Geyser配置，将端口更改为`19132`以外的端口 (例如 `25566`)
 
-# Geyser Not Showing Up in Server List
-This is a _very_ common occurence and is usually one of a few problems nearly every time.
+# Geyser不在服务器列表中出现
+这是一个 _很_ 常见的问题，是基本上每次都要解答的一个问题。
 
-## Loopback Restrictions Not Lifted
+## 环回限制未解除
 
-_This only affects people trying to join Geyser from Windows 10 Edition with Geyser hosted on the same computer._
+_这个问题只影响那些在自己电脑上托管Geyser的Windows 10版本玩家_
 
-This is an issue caused by Loopback restrictions not being lifted. By default, Microsoft Apps have this restriction on all their apps for local connections. You can lift it by typing the following in Windows PowerShell in administrator mode:
+这个问题是因为环回限制未解除导致的。默认情况下，Microsoft Store中下载的App对于本地连接都有环回限制。你可以通过在管理员模式下的PowerShell中输入以下代码来解除限制:
 ```powershell
 CheckNetIsolation LoopbackExempt -a -n="Microsoft.MinecraftUWP_8wekyb3d8bbwe"
 ```
 
-In most cases, Geyser should resolve this issue automatically, but in some events where you may not be an administrator, this will not automatically be resolved.
+通常情况下，Geyser会自动解决此问题，但是如果您不是以管理员身份运行的Geyser，此问题不会被自动解决。
 
 ## Geyser Not Showing Up in Friends Tab
 This is also a common one, Geyser won't always show up in your friends tab and you will have to manually add it through the servers tab. Start off by just using `localhost` or `0.0.0.0` as the IP address. If that does not work, use your **local** IPv4 address.
